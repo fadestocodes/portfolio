@@ -45,22 +45,21 @@ export default function HeroSection() {
         start : '1% top',
         end : 'bottom top',
         scrub : true,
-        markers: true
       }
     })
 
     heroTL.to('.hero-section', {
-        rotate : 7,
-        scale : 0.9,
+        rotate : 9,
+        scale : 0.8,
         yPercent: 30,
         ease : 'power1.inOut'
     })
 
   })
   return (
-    <div className="main-container h-dvh overflow-hidden relative">
-      <section className="hero-section pt-10">
-        <div className="hero-content opacity-0 w-full h-full justify-center items-center flex flex-col translate-y-10 gap-3">
+    <div className="main-container h-dvh overflow-hidden relative ">
+      <section className="hero-section">
+        <div className="hero-content opacity-0 w-full h-full justify-center items-center flex flex-col translate-y-10 gap-3 pt-30">
           <div style={{   clipPath: "circle(0% at 50% 50%)"}} className="headshot w-[250px] h-[250px] rounded-full overflow-hidden">
             <Image 
               src='/headshot.jpg'
@@ -72,7 +71,7 @@ export default function HeroSection() {
           </div>
 
           <h1 className="hero-title text-6xl font-bold">Hey there!</h1>
-          <p className="hero-caption text-lg w-[500px] ">My name is Andrew Jung, some folks call me Fadesto on the internet (there's a backstory). Welcome to my site, let me give you a tour.</p>
+          <p className="hero-caption text-lg w-[500px] ">My name is Andrew Jung, some folks call me Fadesto on the internet (it's a long story). Welcome to my site, let me give you a tour.</p>
 
         </div>
       </section>
