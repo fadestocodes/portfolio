@@ -1,0 +1,67 @@
+import { useGSAP } from '@gsap/react'
+import { SplitText } from 'gsap/all'
+import React from 'react'
+import gsap from 'gsap'
+import BingeableShowcase from '../components/BingeableShowcase'
+
+const ProjectsSection = () => {
+
+    useGSAP(() => {
+        const textSplit1 = SplitText.create('.projects-text1', {
+            type : 'chars'
+        })
+
+        const tl = gsap.timeline()
+
+        tl.to('.projects-text1', {
+
+        })
+
+        gsap.from(textSplit1.chars, {
+            yPercent:200,
+            stagger:0.01,
+            opacity:0,
+            ease:'power1.inOut',
+            scrollTrigger:{
+                trigger:'.projects-container',
+                start:'top 80%',
+                end:'top 20%',
+                markers:true,
+                scrub:true
+
+            }
+        })
+
+        gsap.to('.projects-text2', {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration:1,
+            scrollTrigger:{
+                trigger:'.projects-container',
+                start:'top 80%',
+                end:'top 20%',
+                markers:true,
+                scrub:true
+
+            }
+        })
+
+       
+
+
+})
+    
+
+  return (
+    <div className='projects-container flex flex-col min-h-[500px] justify-center items-center z-50 bg-indigo-700' style={{zIndex:50}}>
+        <div className='title'>
+            <h2 className='projects-text1 text-3xl font-bold uppercase'>What I've been</h2>
+            <h2 style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}} className='projects-text2 text-3xl font-bold uppercase'>Working On</h2>
+        </div>
+        <BingeableShowcase />
+        
+
+    </div>
+  )
+}
+
+export default ProjectsSection
