@@ -24,3 +24,17 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+
+
+  .bingeable-slider{
+    @apply w-dvw h-dvh flex flex-row flex-nowrap ;
+
+  }
+    
+  .bingeable-element {
+    @apply w-full px-12 ; 
+  }
+  
+}

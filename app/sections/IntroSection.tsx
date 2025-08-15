@@ -78,7 +78,7 @@ const IntroSection = () => {
   return (
     <div className="intro-section w-full flex flex-col min-h-dvh items-center relative bg-amber-300" style={{zIndex:-1}}>
         <div className=" flex flex-col  items-center text-7xl w-[900px] pt-[200px] pb-[500px] ">
-            <h2 className="intro-1 ">👋 Pleased to meet ya, I'm a software developer based out of Vancouver, Canada.</h2>
+            <h2 className="intro-1 ">👋 Pleased to meet ya, I'm a software developer based in Vancouver, Canada.</h2>
             <h2 className="intro-2 pt-30">I enjoy building everything across the full stack, but what I'm most passionate about is creating something impactful and user facing.</h2>
         </div>
     </div>

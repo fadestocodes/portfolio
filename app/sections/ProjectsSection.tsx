@@ -26,7 +26,6 @@ const ProjectsSection = () => {
                 trigger:'.projects-container',
                 start:'top 80%',
                 end:'top 20%',
-                markers:true,
                 scrub:true
 
             }
@@ -39,7 +38,6 @@ const ProjectsSection = () => {
                 trigger:'.projects-container',
                 start:'top 80%',
                 end:'top 20%',
-                markers:true,
                 scrub:true
 
             }
@@ -52,12 +50,12 @@ const ProjectsSection = () => {
     
 
   return (
-    <div className='projects-container flex flex-col min-h-[500px] justify-center items-center z-50 bg-indigo-700' style={{zIndex:50}}>
-        <div className='title'>
+    <div className='projects-container flex flex-col  justify-center items-center z-50 bg-indigo-700 ' style={{zIndex:50}}>
+        <div className='title h-[300px] justify-center items-center flex flex-col'>
             <h2 className='projects-text1 text-3xl font-bold uppercase'>What I've been</h2>
             <h2 style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}} className='projects-text2 text-3xl font-bold uppercase'>Working On</h2>
         </div>
-        <BingeableShowcase />
+        {/* <BingeableShowcase /> */}
         
 
     </div>
