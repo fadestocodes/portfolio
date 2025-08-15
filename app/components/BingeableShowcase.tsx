@@ -1,8 +1,9 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import Image from 'next/image'
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import { frontEndPoints, backendData } from '../lib/bingeablePoints'
 
 
 
@@ -12,7 +13,66 @@ const BingeableShowcase = () => {
   const downloadsRef = useRef<HTMLSpanElement>(null)
   const signUpRef = useRef<HTMLSpanElement>(null)
   const ratingRef = useRef<HTMLSpanElement>(null)
+  const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
+  const backendImageRefs = useRef<(HTMLImageElement | null)[]>([]);
+
   const [val, setVal] = useState(0)
+  const [ frontEndHoverIndex, setFrontEndHoverIndex ] = useState(0)
+  const [ backEndHoverIndex, setBackEndHoverIndex ] = useState(0)
+  const [ frontEndImage, setFrontEndImage ] = useState(frontEndPoints[0]?.image)
+  const [ backendImage, setBackendImage ] = useState(backendData[0]?.image)
+
+  const frontEndImages = frontEndPoints.map( data => (data.image) )
+  const backendImages = backendData.map( data => (data.image) )
+
+  useEffect(() => {
+    if (frontEndHoverIndex === null) return;
+  
+    imageRefs.current.forEach((img, index) => {
+      if (!img) return;
+  
+      if (index === frontEndHoverIndex) {
+        gsap.to(img, {
+          top: `${index * 40 - 60}px`, // raise up
+          zIndex: 99,
+          duration: 0.4,
+          ease: 'power2.out',
+        });
+      } else {
+        gsap.to(img, {
+          top: `${index * 40}px`,
+          zIndex: index,
+          duration: 0.4,
+          ease: 'power2.out',
+        });
+      }
+    });
+  }, [frontEndHoverIndex]);
+
+  useEffect(() => {
+    if (backEndHoverIndex === null) return;
+  
+    backendImageRefs.current.forEach((img, index) => {
+      if (!img) return;
+  
+      if (index === backEndHoverIndex) {
+        gsap.to(img, {
+          top: `${index * 40 - 60}px`, // raise up
+          zIndex: 99,
+          duration: 0.4,
+          ease: 'power2.out',
+        });
+      } else {
+        gsap.to(img, {
+          top: `${index * 40}px`,
+          zIndex: index,
+          duration: 0.4,
+          ease: 'power2.out',
+        });
+      }
+    });
+  }, [backEndHoverIndex]);
+  
 
   useGSAP(() => {
     if (!sliderRef.current || !wrapperRef.current) return;
@@ -49,7 +109,7 @@ const BingeableShowcase = () => {
           trigger: '.slide-1',
           start: 'center bottom',
           end: 'right center',
-          markers:true,
+        //   markers:true,
           scrub:true
         },
       })
@@ -157,6 +217,52 @@ const BingeableShowcase = () => {
             });
           },
       });
+
+
+    //   ScrollTrigger.create({
+    //     trigger: '.front-end',
+    //     start: 'top 70%',  
+    //     onEnter: () => {
+    //       gsap.to(ratingObj, {
+    //         val: 5.0    ,
+    //         duration: 1.7,
+    //         ease: 'power1.out',
+    //         onUpdate: () => {
+    //           if (ratingRef.current) {
+    //             ratingRef.current.textContent = ratingObj.val.toFixed(1);
+    //           }
+    //         },
+    //       });
+    //     },
+    //     onLeaveBack: () => {
+    //         gsap.to(ratingObj, {
+    //           val: 0,
+    //           duration: 1,
+    //           ease: 'power1.out',
+    //           onUpdate: () => {
+    //             if (ratingRef.current) {
+    //                 ratingRef.current.textContent = ratingObj.val.toFixed(1);
+    //             }
+    //           },
+    //         });
+    //       },
+    //   });
+
+      const frontendTL = gsap.timeline({
+        scrollTrigger:{
+            trigger : '#front-end',
+            markers:true,
+            scrub:true,
+            start : 'right 10%',
+        }
+      })
+      .from('.front-end-title', {
+        opacity : 0,
+        y:50,
+        ease:'power1.inOut'
+      })
+
+
       
     
 
@@ -211,29 +317,88 @@ const BingeableShowcase = () => {
                 </div>
             </div>
         </div>
-        <div className="bingeable-element w-screen h-full bg-red-500 flex flex-col items-center justify-center gap-10">
-            <div className="flex flex-col justify-center items-center">
-                <h2 className='text-6xl font-extrabold'>The Front End</h2>
-                <p>Take a closer look at how I approached the front end with production code snippets</p>
+      
+        <div id='front-end' className="bingeable-element front-end w-screen h-full bg-lime-900 flex flex-col items-center justify-center gap-10 ">
+            <div className="front-end-title flex flex-col justify-center items-center">
+                    <h2 className='text-6xl font-extrabold'>The Front End</h2>
+                    <p>All about the UI and client logic. Take a closer look at how I approached the front end with real production code snippets</p>
             </div>
-            <div className="flex flex-row  gap-10 pt-10">
-                <div className='w-[900px] h-[700px]  relative overflow-hidden rounded-3xl'>
-                        <Image
-                            src='/custom-hook.png'
-                            fill
-                            alt='code-snippet'
-                        />
+            <div className="flex flex-row  gap-10 pt-10 ">
+
+                <div className='front-end-images w-[700px] h-[700px]  relative   ' >
+                    { frontEndImages.map((image,index) => (
+                            <Image
+                                src={ image }
+                                ref={(el) => {
+                                    if (el) imageRefs.current[index] = el
+                                  }}                                
+                                width={900}
+                                
+                                height={700}
+                                key={index}
+                                alt='code-snippet'
+                                className= {`front-end-image-${index} absolute left-0 `}
+                                style={{ top: `${index * 40}px`,  maskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)'}}
+                            />
+                            
+                    )) }
                 </div>
-                <div className='flex flex-col justify-start items-center w-[40%]'>
-                    <h3 className=" text-4xl font-bold">Custom Hooks</h3>
-                    <p>In this snippet, I've created a custom hook that fetches a film/tv Review data. This encapsulates the fetch logic and all of its related code like refetch and fetchMore for cursor based fetching which separates concerns from the rest of the parent component.</p>
+
+                <div className='front-end-text flex flex-col justify-start items-center w-[40%] gap-3'>
+                    { frontEndPoints.map( (data,index) => (
+                        <div key={index} className='rounded-3xl p-4 cursor-pointer' style={{ backgroundColor: frontEndHoverIndex === index ? 'gray' : undefined  }}
+                            onMouseEnter={()=> {setFrontEndHoverIndex(index); setFrontEndImage(data.image)}}
+                        >
+                            <h3 className=" text-2xl font-bold">{data.content.title}</h3>
+                            <p>{data.content.body}</p>
+                        </div>
+                     )) }
+                    
 
                 </div>
             </div>
             
         </div>
-        <div className="bingeable-element w-screen h-full bg-lime-900 flex items-center justify-center">
-          <h2 className="text-white text-4xl">HELLOOO</h2>
+        <div className="bingeable-element front-end w-screen h-full bg-lime-900 flex flex-col items-center justify-center gap-10 ">
+            <div className="front-end-title flex flex-col justify-center items-center">
+                    <h2 className='text-6xl font-extrabold'>The Front End</h2>
+                    <p>All about the UI and client logic. Take a closer look at how I approached the front end with real production code snippets</p>
+            </div>
+            <div className="flex flex-row  gap-10 pt-10 ">
+
+                <div className='front-end-images w-[700px] h-[700px]  relative   ' >
+                    { backendImages.map((image,index) => (
+                            <Image
+                                src={ image }
+                                ref={(el) => {
+                                    if (el) backendImageRefs.current[index] = el
+                                  }}                                
+                                width={900}
+                                
+                                height={700}
+                                key={index}
+                                alt='code-snippet'
+                                className= {`front-end-image-${index} absolute left-0 `}
+                                style={{ top: `${index * 40}px`,  maskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)'}}
+                            />
+                            
+                    )) }
+                </div>
+
+                <div className='backend-text flex flex-col justify-start items-center w-[40%] gap-3'>
+                    { frontEndPoints.map( (data,index) => (
+                        <div key={index} className='rounded-3xl p-4 cursor-pointer' style={{ backgroundColor: backEndHoverIndex === index ? 'gray' : undefined  }}
+                            onMouseEnter={()=> {setBackEndHoverIndex(index)}}
+                        >
+                            <h3 className=" text-2xl font-bold">{data.content.title}</h3>
+                            <p>{data.content.body}</p>
+                        </div>
+                     )) }
+                    
+
+                </div>
+            </div>
+            
         </div>
       </div>
     </div>
