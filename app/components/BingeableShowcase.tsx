@@ -211,8 +211,26 @@ const BingeableShowcase = () => {
                 </div>
             </div>
         </div>
-        <div className="bingeable-element w-screen h-full bg-red-500 flex items-center justify-center">
-          <h2 className="text-white text-4xl">HELLOOO</h2>
+        <div className="bingeable-element w-screen h-full bg-red-500 flex flex-col items-center justify-center gap-10">
+            <div className="flex flex-col justify-center items-center">
+                <h2 className='text-6xl font-extrabold'>The Front End</h2>
+                <p>Take a closer look at how I approached the front end with production code snippets</p>
+            </div>
+            <div className="flex flex-row  gap-10 pt-10">
+                <div className='w-[900px] h-[700px]  relative overflow-hidden rounded-3xl'>
+                        <Image
+                            src='/custom-hook.png'
+                            fill
+                            alt='code-snippet'
+                        />
+                </div>
+                <div className='flex flex-col justify-start items-center w-[40%]'>
+                    <h3 className=" text-4xl font-bold">Custom Hooks</h3>
+                    <p>In this snippet, I've created a custom hook that fetches a film/tv Review data. This encapsulates the fetch logic and all of its related code like refetch and fetchMore for cursor based fetching which separates concerns from the rest of the parent component.</p>
+
+                </div>
+            </div>
+            
         </div>
         <div className="bingeable-element w-screen h-full bg-lime-900 flex items-center justify-center">
           <h2 className="text-white text-4xl">HELLOOO</h2>
