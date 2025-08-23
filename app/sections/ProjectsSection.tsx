@@ -53,7 +53,7 @@ const ProjectsSection = () => {
     
 
   return (
-    <div className='projects-container flex flex-col  justify-center items-center z-50 bg-black ' style={{zIndex:50}}>
+    <div className='projects-container flex flex-col  justify-center items-center z-50 ' style={{zIndex:50}}>
         <div className='title scale-[10]  justify-center items-center flex flex-col rounded-xl'   >
             <h2 className='projects-text1 text-3xl font-bold  font-heading text-sand tracking-tighter'>What I've been</h2>
             <h2 style={{ }} className='projects-text2  text-3xl font-bold  font-heading text-sand tracking-tighter'>Working On</h2>

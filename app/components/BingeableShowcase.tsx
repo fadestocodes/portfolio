@@ -410,9 +410,9 @@ const BingeableShowcase = () => {
                                 height={80}
                                 alt='bingeable-icon'
                             />
-                           <h3 className='font-sans font-bold text-5xl text-sand '>Bingeable</h3>
+                           <h3 className=' font-extrabold text-5xl text-sand font-bingeable '>Bingeable</h3>
                         </div>
-                        <h3 className=" text-2xl font-sans font-bold text-sand">A social media for film lovers and filmmakers.</h3>
+                        <h3 className=" text-2xl  font-bold text-sand font-bingeable">A social media for film lovers and filmmakers.</h3>
                         <Image
                             src='/ios-store-1.png'
                             width={160}
@@ -468,11 +468,11 @@ const BingeableShowcase = () => {
 
                 <div className='front-end-text flex flex-col justify-start items-center w-[40%] gap-3'  >
                     { frontEndPoints.map( (data,index) => (
-                        <div key={index} className='rounded-xl p-4 cursor-pointer glass-card  ' style={{ backgroundColor: frontEndHoverIndex === index ? '#ffffff52' : undefined  ,opacity : frontEndHoverIndex === index ? 1 : 0.1  }}
+                        <div key={index} className='rounded-xl p-4 cursor-pointer   ' style={{ backgroundColor: frontEndHoverIndex === index ? '#ffffff52' : undefined  ,opacity : frontEndHoverIndex === index ? 1 : 0.5  }}
                             onMouseEnter={()=> {setFrontEndHoverIndex(index); setFrontEndImage(data.image)}}
                         >
-                            <h3 className=" text-2xl font-bold font-heading">{data.content.title}</h3>
-                            <p className='font-heading'>{data.content.body}</p>
+                            <h3 className=" text-2xl font-bold font-heading w-full ">{data.content.title}</h3>
+                            <p className={`font-heading front-end-body ` }>{data.content.body}</p>
                         </div>
                      )) }
                     
@@ -483,8 +483,8 @@ const BingeableShowcase = () => {
         </div>
         <div id='back-end' className="bingeable-element back-end w-screen h-full flex flex-col items-center justify-center gap-10  ">
             <div className="back-end-title-container flex flex-col justify-center items-center ">
-                    <h2 className='text-6xl font-bold font-heading tracking-tighter back-end-title ' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>The Back End</h2>
-                    <p className='font-heading tracking-tighter w-[600px] back-end-para'>A robust backend is needed to support the front end. Here are snippets from my production server code.</p>
+                    <h2 className='text-6xl font-bold font-heading tracking-tighter back-end-title text-sand' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>The Back End</h2>
+                    <p className='font-heading tracking-tighter w-[600px] back-end-para text-sand'>A robust backend is needed to support the front end. Here are snippets from my production server code.</p>
             </div>
             <div className="flex flex-row  gap-10 pt-10 z-1 relative">
 
@@ -509,13 +509,13 @@ const BingeableShowcase = () => {
                     
                
                      
-                <div className='backend-text flex flex-col justify-start items-center w-[40%] gap-3 '>
+                <div className='backend-text flex flex-col justify-start items-center w-[40%] gap-3  '>
                     { backendData.map( (data,index) => (
                         <div key={index} className='rounded-xl p-4 cursor-pointer glass-card' style={{ backgroundColor: backEndHoverIndex === index ? '#ffffff52' : undefined , opacity : backEndHoverIndex === index ? 1 : 0.1 }}
                         onMouseEnter={()=> {setBackEndHoverIndex(index); setBackendImage(data.image)}}
                     >
                             
-                                <h3 className=" text-2xl font-bold font-heading">{data.content.title}</h3>
+                                <h3 className=" text-2xl font-bold font-heading ">{data.content.title}</h3>
                                 <p className='font-heading'>{data.content.body}</p>
                         </div>
                      )) }

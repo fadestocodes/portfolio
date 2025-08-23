@@ -94,7 +94,7 @@ const IntroSection = () => {
           ease : 'power1.inOut',
           stagger : 1,
           scrollTrigger: {
-            start: 'top 60%',
+            start: 'top 50%',
             end : 'bottom center',
             trigger: '.intro-2',
             scrub: true
@@ -156,7 +156,7 @@ const IntroSection = () => {
           ease: "circ.inOut",
           scrollTrigger: {
             trigger:'.impactful-container',
-            start : 'top 45%',
+            start : 'top 40%',
             markers: true
           }
         })
@@ -168,7 +168,7 @@ const IntroSection = () => {
           ease: "circ.inOut",
           scrollTrigger: {
             trigger:'.user-facing-container',
-            start : 'top 50%',
+            start : 'top 45%',
             markers: true
           }
         })
@@ -191,7 +191,7 @@ const IntroSection = () => {
     })
 
   return (
-    <div className="intro-section w-dvw flex flex-col min-h-dvh items-center relative  bg-black  pb-[500px] " style={{}}>
+    <div className="intro-section w-dvw flex flex-col min-h-dvh items-center relative   pb-[500px] " style={{}}>
 
       
         <div className=" flex flex-col  items-start  w-[1000px] pt-[200px] pb-[500px] justify-start ">
@@ -206,7 +206,7 @@ const IntroSection = () => {
                       <h2 className="vancouver-canada text-black">Vancouver, Canada</h2>
                    </div>
               </div>
-            <h2 className="intro-2">I enjoy building everything across the full stack, but what I'm most passionate about is creating something</h2>
+            <h2 className="intro-2 -mt-2">I enjoy building everything across the full stack, but what I'm most passionate about is creating something</h2>
             {/* <span className="most-passionate">most passionate about</span> */}
             {/* <h2 className="intro-3">is creating something</h2> */}
 

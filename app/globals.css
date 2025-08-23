@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @import "tailwindcss";
 
@@ -17,18 +15,19 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0e0e0e;
   
 
   
   
 }
 
-@theme  {
+@theme{
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-paragraph: 'DM Sans', sans-serif;
-  --font-heading: 'Lexend';
+  --font-heading: "Urbanist";
+  --font-bingeable: 'Geist';
   --color-demonicRed: #BB2233;
   --color-customBlack: #0e0e0e;
   --color-sand: #c4b9a5;
@@ -39,7 +38,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0e0e0e;
     --foreground: #ededed;
 
     
@@ -51,9 +50,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
-  background-color: black;
+  background-color: #0e0e0e;
 
-  /* font-family: 'Antonio', sans-serif; */
 }
 
 /* h1, h2, h3 {
@@ -82,15 +80,15 @@ p {
 
 
   .intro-1{
-    @apply text-sand   md:text-7xl text-5xl font-semibold font-heading tracking-tighter
+    @apply text-sand   md:text-7xl text-5xl font-extrabold font-heading tracking-tighter
   }
 
   .intro-2{
-    @apply text-sand md:text-7xl text-5xl font-semibold font-heading tracking-tighter
+    @apply text-sand md:text-7xl text-5xl font-extrabold font-heading tracking-tighter
   }
   
   .intro-3{
-    @apply text-sand  md:text-7xl text-5xl font-semibold font-heading tracking-tighter
+    @apply text-sand  md:text-7xl text-5xl font-extrabold font-heading tracking-tighter
   }
 
   .msg-text-scroll{
@@ -102,7 +100,7 @@ p {
   }
 
   .impactful-container{
-    @apply rotate-3 border-12 -m-3 border-customBlack z-10   justify-self-center self-center  translate-x-20
+    @apply rotate-3 border-12 -m-20 border-customBlack z-10   justify-self-center self-center  translate-x-20
 
   }
 
@@ -110,14 +108,14 @@ p {
     @apply font-heading font-bold z-30 text-5xl p-6 uppercase tracking-tighter
   }
   .user-facing-container{
-    @apply -rotate-3 border-12 -m-6 border-customBlack z-10   justify-self-center self-center  translate-x-20
+    @apply -rotate-3 border-12  border-customBlack z-10 -m-16  justify-self-center self-center  translate-x-20
 
   }
 
 
 
   .and{
-    @apply font-heading font-bold z-40 text-5xl p-6 text-sand uppercase tracking-tighter -m-6 border-customBlack  drop-shadow-[0_0_10px_black]  justify-self-center self-center  translate-y-20
+    @apply font-heading font-bold z-40 text-5xl p-6 text-sand uppercase tracking-tighter mt-6 border-customBlack  drop-shadow-[0_0_10px_black]  justify-self-center self-center  translate-y-20
 
   }
 
