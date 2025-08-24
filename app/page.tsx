@@ -2,8 +2,10 @@
 
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
-import {  ScrambleTextPlugin, SplitText } from "gsap/all";
+import {  DrawSVGPlugin, Physics2DPlugin, ScrambleTextPlugin, SplitText } from "gsap/all";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+
 
 import gsap from "gsap";
 import HeroSection from "./sections/HeroSection";
@@ -12,9 +14,11 @@ import { ScrollSmoother } from 'gsap/dist/ScrollSmoother';
 import IntroSection from "./sections/IntroSection";
 import ProjectsSection from "./sections/ProjectsSection";
 import BingeableShowcase from "./components/BingeableShowcase";
+import TimelineSection from "./sections/TimelineSection";
+import TechStack from "./sections/TechStack";
 
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, useGSAP, MorphSVGPlugin, ScrambleTextPlugin);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, useGSAP, MorphSVGPlugin, ScrambleTextPlugin, DrawSVGPlugin, MotionPathPlugin, Physics2DPlugin);
 
 
 export default function Home() {
@@ -27,6 +31,8 @@ export default function Home() {
       <IntroSection />
       <ProjectsSection />
       <BingeableShowcase />
+      <TimelineSection />
+      <TechStack />
       <div className="h-[1000px]"></div>
 
     </div>

@@ -41,7 +41,6 @@ const ProjectsSection = () => {
                 start:'top 55%',
                 end:'top 20%',
                 scrub:true,
-                markers:true
 
             }
         })

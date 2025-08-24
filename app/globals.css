@@ -233,3 +233,36 @@ p {
   );
 }
 
+
+#svg-stage {
+  max-width: 600px;
+  overflow: visible;
+  margin-top: 60vh;
+}
+
+.ball {
+  fill: var(--color-sand);
+  visibility: hidden;
+}
+
+.line {
+  fill: none;
+  stroke: var(--color-sand);
+  stroke-width: 2px;
+}
+
+text {
+  fill: var(--color-sand);
+  font-size: 15px;
+  visibility: hidden;
+}
+
+.theLine {
+  stroke: var(--color-sand);
+}
+
+.timeline-text{
+  @apply font-heading text-sand invisible text-xs w-[500px]
+}
+
+

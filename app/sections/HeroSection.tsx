@@ -29,10 +29,6 @@ export default function HeroSection() {
       type : 'words ,lines'
     })
 
-    const dollarSplit = SplitText.create('.dollars', {
-      type: 'chars'
-    })
-
     const tl = gsap.timeline()
 
     tl.from(titleSplit.words, {
@@ -44,13 +40,14 @@ export default function HeroSection() {
       y:50
     }).to('.gibberish', {
       opacity:1,
+      delay:.5,
       
       scrambleText: {
         text: "{original}",
         chars: "lowerCase",
-        revealDelay:2
+        // revealDelay:3
       },
-      duration: 4
+      duration: 6
     },'-=.5')
 
 
@@ -156,21 +153,8 @@ export default function HeroSection() {
           />
         </div>
         <div className="hero-content  w-full h-full justify-center items-center flex flex-col translate-y-30 gap-3 pt-30  relative " >
-          {/* <div style={{   clipPath: "circle(0% at 50% 50%)"}} className="headshot w-[250px] h-[250px] rounded-full overflow-hidden">
-            <Image 
-              src='/headshot.jpg'
-              width={1000}
-              height={1000}
-              alt="profile-image"
-              className="object-cover w-full h-full scale-150 -translate-x-2 translate-y-6"
-            />
-          </div> */}
-
-          {/* <h1 className="hero-title">Hey there</h1> */}
-          <p style={{ }} className="hero-caption text-8xl -mt-56 w-[550px] self-center  font-heading tracking-tighter  font-extrabold text-sand  ">I turn <span className="text-[#2e54d1] gibberish opacity-0">computer gibberish</span> into things that make businesses</p>
-          {/* <div className="dollars text-[#2e54d1] absolute bottom-38  left-155  0 text-8xl font-extrabold font-heading tacking-tighter self-center text-center"> $$$</div> */}
-
-
+      
+          <p style={{ }} className="hero-caption text-8xl -mt-56 w-[550px] self-center  font-heading tracking-tighter  font-extrabold text-sand  ">I turn <span className="text-[#2e54d1] gibberish opacity-1">computer gibberish</span> into things that make businesses</p>
 
           <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 667.17 686.54"  className="absolute bottom-20 left-125 w-[200px] z-50 overflow-visible">
             <defs>

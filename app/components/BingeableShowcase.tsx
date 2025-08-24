@@ -288,7 +288,6 @@ const BingeableShowcase = () => {
         scrollTrigger:{
             trigger:'.front-end-images',
             start : 'center 80%',
-            markers:true,
             containerAnimation:tl,
         }
       })
@@ -311,7 +310,6 @@ const BingeableShowcase = () => {
         scrollTrigger:{
             trigger:'.front-end-images',
             start : 'center 80%',
-            markers:true,
             containerAnimation:tl,
         }
       })

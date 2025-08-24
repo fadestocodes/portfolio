@@ -157,7 +157,6 @@ const IntroSection = () => {
           scrollTrigger: {
             trigger:'.impactful-container',
             start : 'top 40%',
-            markers: true
           }
         })
         gsap.to('.user-facing-container', {
@@ -169,7 +168,6 @@ const IntroSection = () => {
           scrollTrigger: {
             trigger:'.user-facing-container',
             start : 'top 45%',
-            markers: true
           }
         })
         gsap.to('.and', {
@@ -180,7 +178,6 @@ const IntroSection = () => {
           scrollTrigger: {
             trigger:'.and',
             start : 'top 60%',
-            markers: true
           }
 
 
