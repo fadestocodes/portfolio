@@ -265,4 +265,12 @@ text {
   @apply font-heading text-sand invisible text-xs w-[500px]
 }
 
+.logo-scroll-container {
+  @apply w-full justify-center items-center flex flex-row gap-5
+}
+
+.tech-logo{
+  @apply justify-center items-center opacity-30
+}
+
 

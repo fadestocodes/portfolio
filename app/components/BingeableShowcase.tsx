@@ -6,6 +6,8 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import { frontEndPoints, backendData } from '../lib/bingeablePoints'
 import { Download, FilePen, Star } from 'lucide-react';
 import { SplitText } from 'gsap/all'
+import LogoScroll from './LogoScroll'
+import { frontEndIcons, backendIcons } from '../lib/techStackLogos'
 
 
 
@@ -437,10 +439,11 @@ const BingeableShowcase = () => {
             </div>
         </div>
       
-        <div id='front-end' className="bingeable-element front-end w-screen h-full flex flex-col items-center justify-center gap-10 text-sand ">
-            <div className="front-end-title-container flex flex-col justify-center items-center  " >
-                    <h2 className='front-end-title text-6xl font-bold font-heading tracking-tighter' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>The Front End</h2>
-                    <p className='front-end-para font-heading w-[600px] tracking-tighter'>All about the UI and client logic. Take a closer look at how I approached the front end with real production code snippets</p>
+        <div id='front-end' className="bingeable-element front-end w-screen h-full flex flex-col items-center justify-center gap-0 text-sand  pt-24 ">
+            <div className="front-end-title-container flex flex-col justify-center items-center  gap-3 " >
+                    <h2 className='front-end-title text-6xl font-bold font-heading tracking-tight uppercase' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>The Front End</h2>
+                    <p className='front-end-para font-heading w-[700px] '>All about the UI and client logic. Take a closer look at how I approached the front end with real production code snippets</p>
+            <LogoScroll   data={frontEndIcons} className='py-3'/>
             </div>
             <div className="flex flex-row  gap-10 pt-10 ">
 
@@ -464,13 +467,13 @@ const BingeableShowcase = () => {
                 </div>
 
 
-                <div className='front-end-text flex flex-col justify-start items-center w-[40%] gap-3'  >
+                <div className='front-end-text flex flex-col justify-start items-center w-[900px] gap-3'  >
                     { frontEndPoints.map( (data,index) => (
                         <div key={index} className='rounded-xl p-4 cursor-pointer   ' style={{ backgroundColor: frontEndHoverIndex === index ? '#ffffff52' : undefined  ,opacity : frontEndHoverIndex === index ? 1 : 0.5  }}
                             onMouseEnter={()=> {setFrontEndHoverIndex(index); setFrontEndImage(data.image)}}
                         >
                             <h3 className=" text-2xl font-bold font-heading w-full ">{data.content.title}</h3>
-                            <p className={`font-heading front-end-body ` }>{data.content.body}</p>
+                            <p className={`font-heading front-end-body  font-medium` }>{data.content.body}</p>
                         </div>
                      )) }
                     
@@ -479,10 +482,12 @@ const BingeableShowcase = () => {
             </div>
             
         </div>
-        <div id='back-end' className="bingeable-element back-end w-screen h-full flex flex-col items-center justify-center gap-10  ">
-            <div className="back-end-title-container flex flex-col justify-center items-center ">
-                    <h2 className='text-6xl font-bold font-heading tracking-tighter back-end-title text-sand' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>The Back End</h2>
-                    <p className='font-heading tracking-tighter w-[600px] back-end-para text-sand'>A robust backend is needed to support the front end. Here are snippets from my production server code.</p>
+        <div id='back-end' className="bingeable-element back-end w-screen h-full flex flex-col items-center justify-center gap-0  text-sand  pt-24">
+            <div className="back-end-title-container flex flex-col justify-center items-center gap-3">
+                    <h2 className='text-6xl font-bold font-heading tracking-tight back-end-title text-sand uppercase' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>The Back End</h2>
+                    <p className='font-heading  w-[700px] back-end-para text-sand'>A robust backend is needed to support the front end. Here are snippets from my production server code.</p>
+
+                    <LogoScroll   data={backendIcons} className='py-3'/>
             </div>
             <div className="flex flex-row  gap-10 pt-10 z-1 relative">
 
@@ -507,14 +512,14 @@ const BingeableShowcase = () => {
                     
                
                      
-                <div className='backend-text flex flex-col justify-start items-center w-[40%] gap-3  '>
+                <div className='backend-text flex flex-col justify-start items-center w-[900px] gap-3  '>
                     { backendData.map( (data,index) => (
-                        <div key={index} className='rounded-xl p-4 cursor-pointer glass-card' style={{ backgroundColor: backEndHoverIndex === index ? '#ffffff52' : undefined , opacity : backEndHoverIndex === index ? 1 : 0.1 }}
+                        <div key={index} className='rounded-xl p-4 cursor-pointer   ' style={{ backgroundColor: backEndHoverIndex === index ? '#ffffff52' : undefined  ,opacity : backEndHoverIndex === index ? 1 : 0.5  }}
                         onMouseEnter={()=> {setBackEndHoverIndex(index); setBackendImage(data.image)}}
                     >
                             
                                 <h3 className=" text-2xl font-bold font-heading ">{data.content.title}</h3>
-                                <p className='font-heading'>{data.content.body}</p>
+                                <p className='font-heading font-medium'>{data.content.body}</p>
                         </div>
                      )) }
                     
@@ -524,13 +529,7 @@ const BingeableShowcase = () => {
             
         </div>
 
-        <div id='last-section' className="bingeable-element w-screen h-full flex items-center justify-center bg-gradient-to-br from-black to-gray-900 p-10 ">
-            <div id='glowing-card-2' className='glowing-card w-[400px] h-[300px]  '>
-                <p className='text-white'>Hello this is a glowoing card</p>
-            
-            </div>
-                     
-        </div>
+       
 
       </div>
     </div>

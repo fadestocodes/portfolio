@@ -33,7 +33,6 @@ export default function Home() {
       <BingeableShowcase />
       <TimelineSection />
       <TechStack />
-      <div className="h-[1000px]"></div>
 
     </div>
   );

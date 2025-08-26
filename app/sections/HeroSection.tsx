@@ -47,7 +47,7 @@ export default function HeroSection() {
         chars: "lowerCase",
         // revealDelay:3
       },
-      duration: 6
+      duration: 7
     },'-=.5')
 
 

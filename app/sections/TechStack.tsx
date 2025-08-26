@@ -208,6 +208,10 @@ const techStack = [
   { name: 'Python', color: '#264DE4' },
   { name: 'AWS', color: '#FF9900' },
   { name: 'PostgreSQL', color: '#336791' },
+  { name: 'Redis' },
+  { name: 'Prisma ORM' },
+  { name: 'Next.js' },
+  { name: 'Tailwind' },
 ];
 
 const TechStack = () => {
@@ -259,7 +263,7 @@ const TechStack = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          border-radius: 20px;
+          border-radius: 30px;
           position: absolute;
           top: 0;
           left: 0;
@@ -368,8 +372,10 @@ const TechStack = () => {
       onMouseMove={handleMouseMove}
       style={{
         width: '100vw',
+        justifyContent:'center',
+        backgroundColor:'#2e54d1',
+        alignItems:'center',
         height: '100vh',
-        margin: '50px auto',
         position: 'relative',
         overflow: 'hidden',
       }}
