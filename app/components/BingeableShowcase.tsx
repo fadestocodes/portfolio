@@ -300,6 +300,9 @@ const BingeableShowcase = () => {
       const backendSplit = SplitText.create('.back-end-para', {
         type : 'words, lines'
       })
+      const challengesSplit = SplitText.create('.challenges-para', {
+        type: 'words, lines'
+      })
 
       gsap.from(frontEndSplit.words, {
         yPercent: 100,
@@ -361,22 +364,138 @@ const BingeableShowcase = () => {
 
         }
       })
+      gsap.to('.challenges-title', {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 1.5,
+        opacity:1,
+        ease:'power1.inOut',
+        scrollTrigger:{
+            start : 'center 70%',
+            end:'bottom center',
+            containerAnimation:tl,
+            trigger:'.challenges',       
+            // markers:true     
 
-    //   gsap.from('#glowing-card-2', {
-    //     opacity: 0,
-    //     y: 20,
-    //     duration: 1.2,
-    //     delay:0.5,
-    //     ease: 'power1.out',
-    //     scrollTrigger:{
-    //         containerAnimation:tl,
-    //         start : 'center 70%',
-    //         end:'bottom center',
-    //         markers:true,
-    //         trigger:'#last-section'            
 
-    //     }
-    //   })
+        }
+      })
+
+      gsap.from(challengesSplit.words, {
+        yPercent: 100,
+        rotate: 5,
+        opacity:0,
+        ease: "power1.inOut",
+        duration: 1,
+        stagger: 0.01,
+        delay:0.5,
+        scrollTrigger:{
+            containerAnimation:tl,
+            start : 'center 70%',
+            // end:'bottom center',
+            trigger:'.challenges'            
+
+        }
+      })
+
+      gsap.fromTo(
+        '.bingeable-logo-final',
+        {
+          scale: 0,
+          opacity: 0,
+          rotation: -180,
+          filter: 'blur(10px)',
+         
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          rotation: 0,
+          filter: 'blur(0px)',
+          duration: 3,
+          ease: 'elastic.out(1, 0.4)',
+          scrollTrigger:{
+            trigger:'.bingeable-final',
+            start:'left 20%',
+            containerAnimation: tl
+          }
+        }
+      )
+
+      gsap.to('#challenge-problem-1', {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 1.5,
+        opacity:1,
+        xPercent:-20,
+        ease:'power1.inOut',
+        scrollTrigger:{
+            start : 'center 70%',
+            end:'bottom center',
+            containerAnimation:tl,
+            trigger:'.challenges-1',       
+        }
+      })
+      gsap.to('#challenge-solution-1', {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: .7,
+        opacity:1,
+        delay:0.3,
+        ease:'power1.inOut',
+        scrollTrigger:{
+            start : 'center 70%',
+            end:'bottom center',
+            containerAnimation:tl,
+            trigger:'.challenges-1',       
+        }
+      })
+      gsap.to('#challenge-problem-2', {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 1.5,
+        opacity:1,
+        ease:'power1.inOut',
+        scrollTrigger:{
+            start : 'left 70%',
+            containerAnimation:tl,
+            trigger:'.challenges-2',       
+        }
+      })
+      gsap.to('#challenge-solution-2', {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: .7,
+        opacity:1,
+        delay:0.3,
+        ease:'power1.inOut',
+        scrollTrigger:{
+            start : 'left 70%',
+            containerAnimation:tl,
+            trigger:'.challenges-2',       
+        }
+      })
+      gsap.to('#challenge-problem-3', {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 1.5,
+        opacity:1,
+        // xPercent:40,
+        ease:'power1.inOut',
+        scrollTrigger:{
+            start : 'left 70%',
+            containerAnimation:tl,
+            trigger:'.challenges-3',       
+        }
+      })
+      gsap.to('#challenge-solution-3', {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: .7,
+        opacity:1,
+        delay:0.3,
+        ease:'power1.inOut',
+        scrollTrigger:{
+            start : 'left 70%',
+            containerAnimation:tl,
+            trigger:'.challenges-3',       
+        }
+      })
+
+    
 
      
 
@@ -441,7 +560,7 @@ const BingeableShowcase = () => {
       
         <div id='front-end' className="bingeable-element front-end w-screen h-full flex flex-col items-center justify-center gap-0 text-sand  pt-20 ">
             <div className="front-end-title-container flex flex-col justify-center items-center  gap-3 " >
-                    <h2 className='front-end-title  font-semibold font-heading tracking-[0.3em] uppercase' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>The Front End</h2>
+                    <h2 className='front-end-title text-customBlue font-bold font-heading tracking-[0.3em] uppercase' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>The Front End</h2>
                     <p className='front-end-para font-heading w-[1000px] font-bold text-2xl pt-2'>All about the UI and client logic. Take a closer look at how I approached the front end with real production code snippets.</p>
             <LogoScroll   data={frontEndIcons} className='py-3'/>
             </div>
@@ -469,7 +588,7 @@ const BingeableShowcase = () => {
 
                 <div className='front-end-text flex flex-col justify-start items-center w-[900px] gap-3'  >
                     { frontEndPoints.map( (data,index) => (
-                        <div key={index} className='rounded-xl p-4 cursor-pointer   ' style={{ backgroundColor: frontEndHoverIndex === index ? '#ffffff52' : undefined  ,opacity : frontEndHoverIndex === index ? 1 : 0.5  }}
+                        <div key={index} className='rounded-xl p-4 cursor-pointer   ' style={{ backgroundColor: frontEndHoverIndex === index ? '#2e54d1' : undefined  ,opacity : frontEndHoverIndex === index ? 1 : 0.5  }}
                             onMouseEnter={()=> {setFrontEndHoverIndex(index); setFrontEndImage(data.image)}}
                         >
                             <h3 className=" font-black text-lg font-heading w-full uppercase  ">{data.content.title}</h3>
@@ -484,7 +603,7 @@ const BingeableShowcase = () => {
         </div>
         <div id='back-end' className="bingeable-element back-end w-screen h-full flex flex-col items-center justify-center gap-0  text-sand  pt-20">
             <div className="back-end-title-container flex flex-col justify-center items-center gap-3">
-                    <h2 className=' font-semibold font-heading tracking-[0.3em] back-end-title text-sand uppercase ' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>The Back End</h2>
+                    <h2 className=' font-bold text-customBlue font-heading tracking-[0.3em] back-end-title  uppercase ' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>The Back End</h2>
                     <p className='font-heading     text-sand w-[1100px] font-bold text-2xl pt-2 '>A robust backend is needed to support the front end. Here are snippets from my production server code.</p>
 
                     <LogoScroll   data={backendIcons} className='py-3'/>
@@ -514,7 +633,7 @@ const BingeableShowcase = () => {
                      
                 <div className='backend-text flex flex-col justify-start items-center w-[900px] gap-3  '>
                     { backendData.map( (data,index) => (
-                        <div key={index} className='rounded-xl p-4 cursor-pointer   ' style={{ backgroundColor: backEndHoverIndex === index ? '#ffffff52' : undefined  ,opacity : backEndHoverIndex === index ? 1 : 0.5  }}
+                        <div key={index} className='rounded-xl p-4 cursor-pointer   ' style={{ backgroundColor: backEndHoverIndex === index ? '#2e54d1' : undefined  ,opacity : backEndHoverIndex === index ? 1 : 0.5  }}
                         onMouseEnter={()=> {setBackEndHoverIndex(index); setBackendImage(data.image)}}
                     >
                             
@@ -527,6 +646,53 @@ const BingeableShowcase = () => {
                 </div>
             </div>
             
+        </div>
+
+        <div className='bingeable-element challenges pt-10'>
+          <div className="challenges-container flex flex-col justify-center items-center  gap-3  " >
+            <div className='challenges-text-container flex flex-col justify-center items-center gap-3'>
+              <h2 className='challenges-title text-customBlue font-bold font-heading tracking-[0.3em] uppercase' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>Challenges</h2>
+              <p className='challenges-para font-heading w-[1000px] font-bold text-2xl pt-2 text-sand '>Here were some of my biggest challenges and takeaways from building this app.</p>
+            </div>
+            <div className='challenges-1 relative justify-center items-center pt-20'>
+              <h3 id='challenge-problem-1' className='challenge-problem ' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>Challenge #1: Building a full production app with a framework and tools I've never used before.</h3>
+              <p id='challenge-solution-1' className='challenge-solution top-95'style={{clipPath: "polygon(0 0, 100% 0%, 100% 0%, 0 0%)"}} >Approach: Watch videos, read documentation and adapt as I go. Mistakes were made along the way but that's the best way to learn. I spent a good amount of time 
+                researching which options to choose when it came to the framework and tools. <br/><br/>For example, since I wanted to eventually distribute to both iOS and Android, I chose to go with React Native rather than
+                writing native code for different platforms. I was confident with this decision since React Native has become well supported through the years and thought it was a safe choice.</p>
+            </div>
+          </div>
+        </div>
+        <div className='challenges-2 w-dvw'>
+          <h2  className='challenges-title text-customBlue font-bold font-heading tracking-[0.3em] uppercase pt-10 ' >Challenges</h2>
+          <div className='challenges-1 relative justify-center items-center pt-20'>
+
+            <h3 id='challenge-problem-2' className='challenge-problem ' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>Challenge #2: Building the algorithm for user's feeds.</h3>
+            <p id='challenge-solution-2' className='challenge-solution top-95' style={{clipPath: "polygon(0 0, 100% 0%, 100% 0%, 0 0%)"}}>Approach: I didn't want to overcomplicate this early in the app. So for now, the feed is more chronological based, pulling data from different models such as a user's friend's activities,
+               data from interacted movies/shows, etc. <br/><br/>I then sort by the date created. In certain scenarios like for 'Trending Posts', I give a weight or a score for a post based on it's interactions like how many likes, comments, reposts, then
+               sort based on its score.<br/><br/>In the future as the app gains more data, I plan on improving the algorithm to suggest relevant content by utilizing more complex data structures like graphs.</p>
+          </div>
+        </div>
+        <div className='challenges-3 w-dvw'>
+        <h2 className='challenges-title text-customBlue font-bold font-heading tracking-[0.3em] uppercase pt-10 ' >Challenges</h2>
+
+          <div className='challenges-1 relative justify-center items-center pt-20'>
+            <h3 id='challenge-problem-3' className='challenge-problem ' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>Challenge #3: Learning about System Design.</h3>
+            <p id='challenge-solution-3' className='challenge-solution top-115' style={{clipPath: "polygon(0 0, 100% 0%, 100% 0%, 0 0%)"}} >Approach: Without much prior knowledge in system design, I wanted to set myself up in the case the app scales in the future. I learned about the 3 pillars in system design: Scalability, Reliability, and Maintainability.
+              I've heard you can't have all three and should focus on two of them.<br/><br/>To improve scalability and reliability, I've set up my app like so:<br/><br/>- when a user makes a request,
+              this first go throughs nginx, which reverse proxies the request mainly to enhance backend security.<br/><br/>- This then go through a load balancer which I configured in AWS, which will distribute the traffic
+              to the most available server instance. This works hand in hand with the auto scaling of my server, which will spin up new instances based on the usage and traffic.<br/><br/>- I have redis setup for frequently requested data as a in memory store.<br/><br/>- As for the DB, if the app really scales, I'll look into vertical scaling with partitioning/sharding.  </p>
+          </div>
+        </div>
+
+        <div className='bingeable-element bingeable-final justify-center items-center  relative'>
+          
+            <Image
+              src='/bingeable-logo.png'
+              width={100}
+              height={100}
+              alt='bingeable-icon'
+              className='bingeable-logo-final absolute top-1/2 left-1/2 transform -translate-x-1/2'
+          />
         </div>
 
        

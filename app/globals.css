@@ -74,7 +74,7 @@ p {
   }
     
   .bingeable-element {
-    @apply w-full -z-10 ; 
+    @apply w-dvw h-dvh -z-10 ; 
   }
 
 
@@ -124,6 +124,15 @@ p {
 
   }
   
+}
+
+
+.challenge-problem{
+  @apply -rotate-2 bg-customBlue text-sand font-heading text-3xl px-10 py-10  font-bold w-[800px]  border-10 border-customBlack 
+}
+
+.challenge-solution{
+  @apply rotate-1 bg-sand text-black font-heading text-xl font-semibold  w-[1000px] border-10 border-customBlack absolute  left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-10 py-10 
 }
 
 @keyframes spin-border {
@@ -176,7 +185,7 @@ text {
 }
 
 .tech-logo{
-  @apply justify-center items-center opacity-30
+  @apply justify-center items-center opacity-60
 }
 
 .footer-wrapper{
