@@ -135,105 +135,6 @@ p {
 
 
 
-
-.glowing-card {
-  border-radius: 15px;
-  background-color: rgb(42, 42, 42);
-  padding: 22px;
-  /* width: 300px; */
-  text-align: center;
-  position: relative;
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
-
-.glowing-card::after{
-  content : '';
-  position: absolute;
-  height : 100%;
-  width : 100%;
-  top : 50%;
-  left : 50%;
-  translate: -50% -50%;
-  z-index: -10; 
-  padding: 0px;
-  border-radius: 15px;
-  background-image:  conic-gradient(from var(--angle) at center, transparent 30%, white);
-  animation : 12s spin-border linear infinite;
-
-}
-
-.glowing-card::before{
-  content : '';
-  position: absolute;
-  height : 100%;
-  width : 100%;
-  top : 50%;
-  left : 50%;
-  translate: -50% -50%;
-  z-index: -10; 
-  padding: 0px;
-  border-radius: 15px;
-  background-image:  conic-gradient(from var(--angle) at center, transparent 30%, white);
-  animation : 12s spin-border linear infinite;
-  filter : blur(0.5rem);
-  opacity: 0.5;
-
-}
-
-
-.glass-card {
-  width: 100% ;
-  background: rgba(255, 255, 255, 0.32);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 0 12px 6px rgba(255, 255, 255, 0.6);
-  position: relative;
-  overflow: hidden;
-}
-
-.glass-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.8),
-    transparent
-  );
-}
-
-.glass-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.8),
-    transparent,
-    rgba(255, 255, 255, 0.3)
-  );
-}
-
-
 #svg-stage {
   max-width: 600px;
   overflow: visible;
@@ -269,8 +170,88 @@ text {
   @apply w-full justify-center items-center flex flex-row gap-5
 }
 
+
+.testimonials{
+  @apply w-dvw
+}
+
 .tech-logo{
   @apply justify-center items-center opacity-30
+}
+
+.footer-wrapper{
+  @apply w-dvw h-dvh flex relative flex-col
+}
+
+.footer{
+  @apply w-dvw h-dvh relative flex flex-col
+}
+
+.footer-content{
+  @apply flex flex-col gap-10 absolute top-80 left-1/2 transform -translate-x-1/2 -translate-y-1/2  justify-center items-center z-30
+}
+
+.confetti{
+  @apply flex flex-col gap-10 absolute top-0 left-1/2 transform -translate-x-1/2   justify-center items-center  w-dvw 
+}
+
+.footer-text{
+  @apply  gap-5 flex flex-col
+}
+
+.footer-cta{
+  @apply pt-10 gap-10 flex flex-row justify-center items-center translate-y-10 opacity-0 relative
+}
+
+.buttons{
+  @apply flex flex-col gap-2 
+}
+
+.send-button{
+  @apply bg-white justify-center items-center rounded-full self-center flex py-1 w-[140px] gap-1 cursor-pointer
+}
+.gh-button{
+  @apply bg-white justify-center items-center rounded-full self-center flex py-1 w-[120px] gap-1 cursor-pointer
+}
+
+.cta-ui{
+  @apply gap-3 flex flex-row justify-center items-center relative 
+}
+
+.cta-left{
+  @apply flex flex-col gap-3 justify-center items-center 
+}
+
+.cta-right{
+  @apply flex flex-col gap-5 justify-center items-center
+}
+
+.contact-form{
+  @apply flex flex-col gap-3 
+}
+
+.message-input{
+  @apply px-6 py-6 border-2 border-white rounded-4xl h-[200px] w-[700px]  text-white  ;
+  resize: none;
+}
+.email-input{
+  @apply px-4 py-2 border-2 border-white rounded-full w-[350px] text-white 
+}
+
+.form-buttons{
+  @apply self-end gap-2 flex flex-row justify-center items-center
+}
+
+.back-button{
+  @apply border-sand border-2 rounded-full text-sand w-[80px] py-2 font-heading font-bold cursor-pointer  text-center
+}
+
+.form-send-button{ 
+  @apply bg-sand rounded-full text-customBlue w-[80px] py-2 font-heading font-bold cursor-pointer  text-center
+}
+
+.form-label{
+  @apply text-white font-heading font-semibold pl-6
 }
 
 

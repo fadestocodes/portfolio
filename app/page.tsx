@@ -15,7 +15,8 @@ import IntroSection from "./sections/IntroSection";
 import ProjectsSection from "./sections/ProjectsSection";
 import BingeableShowcase from "./components/BingeableShowcase";
 import TimelineSection from "./sections/TimelineSection";
-import TechStack from "./sections/TechStack";
+import TechStack from "./components/TechStack";
+import Testimonials from "./sections/Testimonials";
 
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, useGSAP, MorphSVGPlugin, ScrambleTextPlugin, DrawSVGPlugin, MotionPathPlugin, Physics2DPlugin);
@@ -32,6 +33,7 @@ export default function Home() {
       <ProjectsSection />
       <BingeableShowcase />
       <TimelineSection />
+      <Testimonials />
       <TechStack />
 
     </div>
