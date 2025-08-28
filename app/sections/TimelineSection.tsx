@@ -57,7 +57,7 @@ const TimelineSection = () => {
 
     
   return (
-    <div className='timeline w-dvw relative'>
+    <div className='timeline w-dvw relative '>
                 
         <svg id="svg-stage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 2526.3">
             <path className='theLine' d="M-5,0c303.3,153.3,405,303.3,305,450s-156.7,246.7-170,300c-20,66.7,36.7,150,170,250,133.3,100,117.4,455-115.9,488.4-88.3,15.5,121,58.8,158.6,80.1s-116.1,19.6-143.8,52.3,90.2,8.2,114.6,32.7-104.8,31.1-77,63.8c27.8,32.7,196.2-1.6,241.9,93.2s-336.7,14-294.2,94.8c45.8,87,287.7,148.8,243.6,299.1S-12.1,2506.7-12.1,2506.7" fill="none" stroke="#000" strokeWidth="10" />

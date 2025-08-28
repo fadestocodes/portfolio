@@ -171,6 +171,73 @@ text {
   stroke: var(--color-sand);
 }
 
+.timeline-section {
+  width: 100%;
+  overflow: hidden;
+  padding: 4rem;
+  position: relative;
+}
+
+.timeline-track {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 3rem;
+  flex-wrap: nowrap;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #444;
+  z-index: 1;
+}
+
+.timeline-tick {
+  position: absolute;
+  top: 50%;
+  width: 2px;
+  height: 30px;
+  background: #fff;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.timeline-item {
+  z-index: 3;
+  min-width: 200px;
+  height: 300px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+
+.timeline-intro-wrapper{
+  @apply h-dvh w-dvw justify-center items-center flex overflow-hidden relative  
+}
+
+
+/* 
+.timeline-intro-wrapper {
+  mask-image: radial-gradient(circle at center, white 10%, black 40%);
+  -webkit-mask-image: radial-gradient(circle at center, white 10%, black 40%);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  overflow: hidden;
+  position:relative;
+} */
+
 .timeline-text{
   @apply font-heading text-sand invisible text-xs w-[500px]
 }
@@ -181,7 +248,27 @@ text {
 
 
 .testimonials{
-  @apply w-dvw
+  @apply w-dvw  flex flex-col items-center justify-center gap-0 pb-[300px]
+  
+}
+
+.testimonials-intro{
+  @apply w-dvw h-[120dvh] flex flex-col items-center justify-center gap-0
+  
+}
+
+
+
+.kind-words{
+  @apply uppercase text-[17.5vw] leading-[80%] tracking-tighter ml-[2vw] font-bold ;
+}
+
+.testimonial-content-wrapper{
+  @apply flex flex-col gap-30
+}
+
+.single-testimonial-wrapper{
+  @apply flex flex-col w-[1000px] justify-start items-start gap-10
 }
 
 .tech-logo{
