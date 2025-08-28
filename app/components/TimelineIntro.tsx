@@ -1,33 +1,47 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import React from 'react'
+import React, {useRef} from 'react'
 
 const TimelineIntro = () => {
 
-    useGSAP(()=> {
-        const tl = gsap.timeline()
+    const svgRef = React.useRef(null)
 
-        tl.to('.timeline-svg', {
-            x : 900,
-            ease : 'power1.inOut',
-            duration: 4,
-            scrollTrigger: {
-                trigger: '.timeline-intro-wrapper',
-                start:' top center',
-            }
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.timeline-svg',
+            start: 'top center',
+            toggleActions: 'play reset play reset',
+        }
         })
+      
+        tl.to(svgRef.current, {
+          x: 900,
+          ease: 'back.inOut',
+          duration: 4
+        })
+        .to('.take-back', {
+            opacity :1,
+            y:0,
+            ease:'power1.inOut',
+            duration:1.5
+        }, '-=1')
 
 
-    })
-
+      }, [])
   return (
-    <div className='timeline-intro-wrapper ' style={{
+    <div className='timeline-intro-wrapper  ' style={{
       }}>
-        <div className='w-full h-full absolute'  style={{  zIndex:40,
+        <div className='w-full h-full absolute'  style={{  zIndex:10,
          background: `linear-gradient(to right, #0e0e0e 0% ,#0e0e0e 35%, transparent 45%, transparent 55%, #0e0e0e 65%, #0e0e0e 100%)`}}/>
+         <div style={{zIndex:20}}>
+            <h2 className='take-back font-heading text-6xl font-bold text-sand opacity-1 transform mb-80 translate-y-20  '>Let's take it back.</h2>
+         </div>
        
         <svg
             id="Layer_1"
+            ref={svgRef}
             className='timeline-svg'
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 5092.47 1080"

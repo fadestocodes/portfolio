@@ -417,24 +417,25 @@ const BingeableShowcase = () => {
             trigger:'.bingeable-final',
             start:'left 20%',
             containerAnimation: tl,
-            toggleActions: 'restart none restart none',
-            onLeave: () => {
-              // Instantly hide when it scrolls out
-              gsap.set('.bingeable-logo-final', {
-                scale: 0,
-                opacity: 0,
-                rotation: -180,
-                filter: 'blur(10px)',
-              })
-            },
-            onEnterBack: () => {
-              gsap.set('.bingeable-logo-final', {
-                scale: 0,
-                opacity: 0,
-                rotation: -180,
-                filter: 'blur(10px)',
-              })
-            }
+            toggleActions: 'play reset play reset',
+
+            // onLeave: () => {
+            //   // Instantly hide when it scrolls out
+            //   gsap.set('.bingeable-logo-final', {
+            //     scale: 0,
+            //     opacity: 0,
+            //     rotation: -180,
+            //     filter: 'blur(10px)',
+            //   })
+            // },
+            // onEnterBack: () => {
+            //   gsap.set('.bingeable-logo-final', {
+            //     scale: 0,
+            //     opacity: 0,
+            //     rotation: -180,
+            //     filter: 'blur(10px)',
+            //   })
+            // }
         }
         }
       )

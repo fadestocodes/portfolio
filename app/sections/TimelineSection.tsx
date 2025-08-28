@@ -1,6 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import React from 'react'
 import gsap from 'gsap';
+import Image from 'next/image';
 
 const TimelineSection = () => {
 
@@ -18,13 +19,13 @@ const TimelineSection = () => {
           }
         })
         .to(".ball02, .text01, #text-2011 ", {}, 0.04)
-        .to(".ball03, .text02, #text-2011-2", {}, 0.07)
+        .to(".ball03, .text02, #text-2011-2 , #uoft", {}, 0.07)
         .to(".ball04, .text03, #text-2014", {}, 0.13)
         .to(".ball05, .text04, #text-2015", {}, 0.17)
-        .to(".ball06, .text05, #text-2016", {}, 0.2)
-        .to(".ball07, #text-barbering-great", {}, 0.23)
+        .to(".ball06, .text05, #text-2016, #chair, #haircut", {}, 0.2)
+        .to(".ball07, #text-barbering-great, #competition, #pompodour, #combover", {}, 0.23)
         .to(".ball08, .text06, #text-2023", {}, 0.42)
-        .to(".ball09, .text07, #text-2024", {}, 0.54)
+        .to(".ball09, .text07, #text-2024, #camera-op, #still-1, #still-2, #still-3", {}, 0.54)
         .to(".ball10, .text08, #text-2025", {}, 0.62)
         
         const main = gsap
@@ -57,8 +58,91 @@ const TimelineSection = () => {
 
     
   return (
-    <div className='timeline w-dvw relative '>
-                
+    <div className='timeline  w-dvw relative '>
+
+            <Image
+                id='uoft'
+                src='/uoft.jpg'
+                width={150}
+                height={150}
+                alt='university-of-toronto'
+                className='timeline-pic  absolute top-[390px] left-[1200px] opacity-0 rotate-6'
+            />
+            <Image
+                id='chair'
+                src='/shop-3.jpg'
+                width={120}
+                height={120}
+                alt='barber-chair'
+                className='timeline-pic  absolute top-[1186px] left-[1100px] opacity-0 -rotate-3'
+            />
+            <Image
+                id='haircut'
+                src='/haircut.jpg'
+                width={120}
+                height={120}
+                alt='haircut-1'
+                className='timeline-pic  absolute top-[1100px] left-[1300px] opacity-0 rotate-3'
+            />
+            
+            <Image
+                id='pompodour'
+                src='/pompodour.jpg'
+                width={120}
+                height={120}
+                alt='haircut-2'
+                className='timeline-pic  absolute top-[1520px] left-[800px] opacity-0'
+            />
+            <Image
+                id='combover'
+                src='/combover.jpg'
+                width={120}
+                height={120}
+                alt='haircut-3'
+                className='timeline-pic  absolute top-[1530px] left-[1000px] opacity-0 -rotate-5'
+            />
+            <Image
+                id='competition'
+                src='/competition.jpg'
+                width={120}
+                height={120}
+                alt='competition'
+                className='timeline-pic  absolute top-[1500px] left-[1200px] opacity-0 rotate-5'
+            />
+            <Image
+                id='camera-op'
+                src='/camera-operating.jpg'
+                width={120}
+                height={120}
+                alt='camera-operating'
+                className='timeline-pic  absolute top-[2000px] left-[600px] opacity-0 -rotate-5'
+            />
+            <Image
+                id='still-1'
+                src='/still-5.jpg'
+                width={180}
+                height={180}
+                alt='film-still-1'
+                className='timeline-pic  absolute top-[2150px] left-[800px] opacity-0 rotate-6'
+            />
+            <Image
+                id='still-2'
+                src='/still-6.jpg'
+                width={180}
+                height={180}
+                alt='film-still-2'
+                className='timeline-pic  absolute top-[2000px] left-[920px] opacity-0 rotate-6'
+            />
+            <Image
+                id='still-3'
+                src='/best-cine.png'
+                width={250}
+                height={250}
+                alt='film-still-3'
+                className='timeline-pic  absolute top-[2100px] left-[1300px] opacity-0 -rotate-3'
+            />
+
+       
         <svg id="svg-stage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 2526.3">
             <path className='theLine' d="M-5,0c303.3,153.3,405,303.3,305,450s-156.7,246.7-170,300c-20,66.7,36.7,150,170,250,133.3,100,117.4,455-115.9,488.4-88.3,15.5,121,58.8,158.6,80.1s-116.1,19.6-143.8,52.3,90.2,8.2,114.6,32.7-104.8,31.1-77,63.8c27.8,32.7,196.2-1.6,241.9,93.2s-336.7,14-294.2,94.8c45.8,87,287.7,148.8,243.6,299.1S-12.1,2506.7-12.1,2506.7" fill="none" stroke="#000" strokeWidth="10" />
             <circle className="ball ball01" cx="50" cy="100" r="20" />
@@ -102,10 +186,10 @@ const TimelineSection = () => {
         <div id='text-2023' className='timeline-text absolute top-[1792px] left-[800px]'>
             <p>...but over time I lost the passion, felt limited in my growth, and simply felt like I can achieve more elsewhere.</p>
         </div>
-        <div id='text-2024' className='timeline-text absolute top-[1992px] left-[800px]'>
+        <div id='text-2024' className='timeline-text absolute top-[1880px] left-[800px]'>
             <p>I explored a few different paths, while keeping my barbering job. Most notably I pursued cinematography where I earned a 'Best Cinematography Award' nomination at a local film festival. </p>
         </div>
-        <div id='text-2025' className='timeline-text absolute top-[2186px] left-[800px]'>
+        <div id='text-2025' className='timeline-text absolute top-[2350px] left-[800px]'>
             <p>Ultimately, I learned two things about myself after this exploration phase. I love technology and creative problem solving. So I dove head first in software development and after learning on my own, I built and launched my mobile app Bingeable, which has a real growing user base.</p>
             <p>I am now looking to apply my skills and learnings at a place where I can contribute and grow further...</p>
         </div>
