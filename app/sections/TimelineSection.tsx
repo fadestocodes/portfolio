@@ -58,7 +58,7 @@ const TimelineSection = () => {
 
     
   return (
-    <div className='timeline  w-dvw relative '>
+    <div className='timeline  w-dvw relative pb-40'>
 
             <Image
                 id='uoft'
@@ -189,7 +189,7 @@ const TimelineSection = () => {
         <div id='text-2024' className='timeline-text absolute top-[1880px] left-[800px]'>
             <p>I explored a few different paths, while keeping my barbering job. Most notably I pursued cinematography where I earned a 'Best Cinematography Award' nomination at a local film festival. </p>
         </div>
-        <div id='text-2025' className='timeline-text absolute top-[2350px] left-[800px]'>
+        <div id='text-2025' className='timeline-text absolute top-[2400px] left-[800px]'>
             <p>Ultimately, I learned two things about myself after this exploration phase. I love technology and creative problem solving. So I dove head first in software development and after learning on my own, I built and launched my mobile app Bingeable, which has a real growing user base.</p>
             <p>I am now looking to apply my skills and learnings at a place where I can contribute and grow further...</p>
         </div>

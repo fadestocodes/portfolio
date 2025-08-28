@@ -1,8 +1,65 @@
 import React from 'react'
 import { testimonialData } from '../lib/testimonialData'
 import Image from 'next/image'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { SplitText } from 'gsap/all'
 
 const Testimonials = () => {
+
+    useGSAP(() => {
+        const tl = gsap.timeline()
+
+        const text1Split = SplitText.create('#text-1', {
+            type : 'words'
+        })
+        const text2Split = SplitText.create('#text-2', {
+            type : 'words'
+        })
+        const text3Split = SplitText.create('#text-3', {
+            type : 'words'
+        })
+
+        tl.to(text1Split.words, {
+            color: '#2e54d1',
+            ease : 'power1.inOut',
+            stagger : 1,
+            scrollTrigger: {
+              start: 'top 70%',
+              end : '30% 80%%',
+              trigger: '.testimonials',
+              scrub: true,
+              markers:true
+  
+            }
+        })
+        .to(text2Split.words, {
+            color: '#2e54d1',
+            ease : 'power1.inOut',
+            stagger : 1,
+            scrollTrigger: {
+              start: 'top 50%',
+              end : 'bottom 40%%',
+              trigger: '#text-2',
+              scrub: true,
+              markers:true
+  
+            }
+        })
+        .to(text3Split.words, {
+            color: '#2e54d1',
+            ease : 'power1.inOut',
+            stagger : 1,
+            scrollTrigger: {
+              start: 'top 50%',
+              end : 'bottom 40%%',
+              trigger: '#text-3',
+              scrub: true,
+              markers:true
+  
+            }
+        })
+    })
 
     const handleClick = (url) => {
         window.open(url, '_blank')
@@ -13,7 +70,7 @@ const Testimonials = () => {
         <div className='testimonial-content-wrapper'>
             { testimonialData.map( (data, index) => (
                 <div key={index} className='single-testimonial-wrapper'>
-                    <h3  className='testimonial-text font-heading text-6xl font-extrabold text-sand tracking-tight'><span className='text-customBlue font-heading text-9xl font-bold tracking-tighter '>" </span>{data.text}</h3>
+                    <h3  id={`text-${index+1}`} className='testimonial-text font-heading text-6xl font-extrabold text-sand tracking-tight'><span className='text-customBlue font-heading text-9xl font-bold tracking-tighter '>" </span>{data.text}</h3>
                     <div className='flex flex-row gap-3 justify-center items-center cursor-pointer' onClick={()=>handleClick(data.linkedIn)}>
                         <Image
                             src={data?.picURL || '/placeholder-profile-pic.png'}

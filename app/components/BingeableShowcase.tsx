@@ -291,6 +291,7 @@ const BingeableShowcase = () => {
             trigger:'.front-end-images',
             start : 'center 80%',
             containerAnimation:tl,
+
         }
       })
 
@@ -316,6 +317,7 @@ const BingeableShowcase = () => {
             trigger:'.front-end-images',
             start : 'center 80%',
             containerAnimation:tl,
+
         }
       })
 
@@ -341,7 +343,8 @@ const BingeableShowcase = () => {
             start : 'center 70%',
             end:'bottom center',
             containerAnimation:tl,
-            trigger:'.back-end-images',       
+            trigger:'.back-end-images',   
+    
             // markers:true     
 
 
@@ -360,7 +363,8 @@ const BingeableShowcase = () => {
             containerAnimation:tl,
             start : 'center 70%',
             end:'bottom center',
-            trigger:'.back-end-images'            
+            trigger:'.back-end-images',
+            
 
         }
       })
@@ -373,7 +377,9 @@ const BingeableShowcase = () => {
             start : 'center 70%',
             end:'bottom center',
             containerAnimation:tl,
-            trigger:'.challenges',       
+            trigger:'.challenges',      
+            toggleActions: 'play reset play reset',
+ 
             // markers:true     
 
 
@@ -392,7 +398,9 @@ const BingeableShowcase = () => {
             containerAnimation:tl,
             start : 'center 70%',
             // end:'bottom center',
-            trigger:'.challenges'            
+            trigger:'.challenges'  ,
+            toggleActions: 'play reset play reset',
+          
 
         }
       })
@@ -451,6 +459,8 @@ const BingeableShowcase = () => {
             end:'bottom center',
             containerAnimation:tl,
             trigger:'.challenges-1',       
+            toggleActions: 'play reset play reset',
+
         }
       })
       gsap.to('#challenge-solution-1', {
@@ -464,6 +474,8 @@ const BingeableShowcase = () => {
             end:'bottom center',
             containerAnimation:tl,
             trigger:'.challenges-1',       
+            toggleActions: 'play reset play reset',
+
         }
       })
       gsap.to('#challenge-problem-2', {
@@ -474,7 +486,9 @@ const BingeableShowcase = () => {
         scrollTrigger:{
             start : 'left 70%',
             containerAnimation:tl,
-            trigger:'.challenges-2',       
+            trigger:'.challenges-2',      
+            toggleActions: 'play reset play reset',
+ 
         }
       })
       gsap.to('#challenge-solution-2', {
@@ -486,7 +500,9 @@ const BingeableShowcase = () => {
         scrollTrigger:{
             start : 'left 70%',
             containerAnimation:tl,
-            trigger:'.challenges-2',       
+            trigger:'.challenges-2', 
+            toggleActions: 'play reset play reset',
+      
         }
       })
       gsap.to('#challenge-problem-3', {
@@ -498,7 +514,9 @@ const BingeableShowcase = () => {
         scrollTrigger:{
             start : 'left 70%',
             containerAnimation:tl,
-            trigger:'.challenges-3',       
+            trigger:'.challenges-3', 
+            toggleActions: 'play reset play reset',
+      
         }
       })
       gsap.to('#challenge-solution-3', {
@@ -510,7 +528,9 @@ const BingeableShowcase = () => {
         scrollTrigger:{
             start : 'left 70%',
             containerAnimation:tl,
-            trigger:'.challenges-3',       
+            trigger:'.challenges-3',    
+            toggleActions: 'play reset play reset',
+   
         }
       })
 
@@ -623,7 +643,7 @@ const BingeableShowcase = () => {
         <div id='back-end' className="bingeable-element back-end w-screen h-full flex flex-col items-center justify-center gap-0  text-sand  pt-20">
             <div className="back-end-title-container flex flex-col justify-center items-center gap-3">
                     <h2 className=' font-bold text-customBlue font-heading tracking-[0.3em] back-end-title  uppercase ' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>The Back End</h2>
-                    <p className='font-heading     text-sand w-[1100px] font-bold text-2xl pt-2 '>A robust backend is needed to support the front end. Here are snippets from my production server code.</p>
+                    <p className='font-heading back-end-para   text-sand w-[1100px] font-bold text-2xl pt-2 '>A robust backend is needed to support the front end. Here are snippets from my production server code.</p>
 
                     <LogoScroll   data={backendIcons} className='py-3'/>
             </div>
