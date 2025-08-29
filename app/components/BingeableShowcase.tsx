@@ -405,6 +405,10 @@ const BingeableShowcase = () => {
         }
       })
 
+      const bingeableTextSplit = SplitText.create('.bingeable-text', {
+        type: 'chars'
+      })
+
       gsap.fromTo(
         '.bingeable-logo-final',
         {
@@ -426,27 +430,32 @@ const BingeableShowcase = () => {
             start:'left 20%',
             containerAnimation: tl,
             toggleActions: 'play reset play reset',
-
-            // onLeave: () => {
-            //   // Instantly hide when it scrolls out
-            //   gsap.set('.bingeable-logo-final', {
-            //     scale: 0,
-            //     opacity: 0,
-            //     rotation: -180,
-            //     filter: 'blur(10px)',
-            //   })
-            // },
-            // onEnterBack: () => {
-            //   gsap.set('.bingeable-logo-final', {
-            //     scale: 0,
-            //     opacity: 0,
-            //     rotation: -180,
-            //     filter: 'blur(10px)',
-            //   })
-            // }
         }
         }
       )
+      gsap.set(bingeableTextSplit.chars, { 
+        opacity: 0, 
+        yPercent: 90 ,
+        scale:0.6,
+        rotate:-90,
+      });
+      
+      gsap.to(bingeableTextSplit.chars, {
+        opacity: 1,
+        rotate:0,
+        scale:1,
+        yPercent: 0,
+        ease: "elastic.out",
+        duration: 0.6,
+        delay:.8,
+        stagger: 0.05, // <-- small value for snappy character-by-character
+        scrollTrigger: {
+          trigger: ".bingeable-final",
+          start: "left 30%", // fire when element hits 80% of viewport
+          containerAnimation: tl, // if this is inside a horizontal scroll animation
+          toggleActions: "play reset play reset", // play once, don’t reset
+        },
+      });
 
       gsap.to('#challenge-problem-1', {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
@@ -724,14 +733,16 @@ const BingeableShowcase = () => {
         </div>
 
         <div className='bingeable-element bingeable-final justify-center items-center  relative'>
-          
-            <Image
-              src='/bingeable-logo.png'
-              width={100}
-              height={100}
-              alt='bingeable-icon'
-              className='bingeable-logo-final absolute top-1/2 left-1/2 transform -translate-x-1/2'
-          />
+            <div className='flex flex-col justify-center items-center'>
+              <Image
+                src='/bingeable-logo.png'
+                width={100}
+                height={100}
+                alt='bingeable-icon'
+                className='bingeable-logo-final absolute top-1/2 left-1/2 transform -translate-x-1/2'
+              />
+              <h3 className='bingeable-text font-extrabold text-5xl text-sand font-bingeable  absolute  top-150 left-1/2 transform -translate-x-1/2'>Bingeable</h3>
+            </div>
         </div>
 
        
