@@ -71,73 +71,165 @@ export default function HeroSection() {
 
 
     // Start #js off screen left and invisible (optional)
-    gsap.set("#js", { x: -2000, opacity: 0, scale:.7, y:-60, rotation: 0, transformOrigin: "50% 50%" });
-    gsap.set('#python-group',{ x: -2500, opacity: 0, scale:.7, y:-60, rotation: 0, transformOrigin: "50% 50%" } )
-    gsap.set('#java',{ x: -3000, opacity: 0, scale:.7, y:-60, rotation: 0, transformOrigin: "50% 50%" } )
-
-  
-    dollarTL.to("#js", {
-      duration: 2,
-      opacity: 1,          // Fade in if needed
-      ease: "power1.inOut",
-    }, 0) // start at 0 seconds
-  
-    .to("#js", {
-      duration: 7,
-      x: 140,                // Move to natural position
-      rotation: 360*3,       // 2 full rotations
-      ease: "power4.inOut",
-    }, 0) // sync rotation with movement
-  
-    .to("#js path", {
-      duration: 4,
-      delay:6,
-      morphSVG: "#dollar path",
-      ease: "power1.out",
-    }, 0)
-    
 
 
+    const mm = gsap.matchMedia();
+    const jsEl = document.querySelector("#Layer_1")
+    const contentEl = document.querySelector(".hero-content")
+  
+    const contentBox = contentEl.getBoundingClientRect()
+    const jsBox = jsEl.getBoundingClientRect()
+  
+    // Target: move svg so its left aligns with hero-content’s left
+    const targetX = contentBox.left - jsBox.left
+  
 
-    pythonTL.to("#python-group", {
-      duration: 2,
-      opacity: 1,          // Fade in if needed
-      ease: "power1.inOut",
-    }, 0) // start at 0 seconds
-  
-    .to("#python-group", {
-      duration: 7,
-      x: 140,                // Move to natural position
-      rotation: 360*3,       // 2 full rotations
-      ease: "power4.inOut",
-    }, 0) // sync rotation with movement
-  
-    .to("#python-group path", {
-      duration: 4,
-      delay:6,
-      morphSVG: "#dollar-python path",
-      ease: "power1.out",
-    }, 0)
 
-    javaTL.to("#java", {
-      duration: 2,
-      opacity: 1,          // Fade in if needed
-      ease: "power1.inOut",
-    }, 0) // start at 0 seconds
+mm.add("(max-width: 639px)", () => {
+  // mobile (smaller x)
+
+  gsap.set("#js", { x: -2200, opacity: 0, scale:.5, y:-200, rotation: 0, transformOrigin: "50% 50%" });
+  gsap.set('#python-group',{ x: -2700, opacity: 0, scale:.5, y:-200, rotation: 0, transformOrigin: "50% 50%" } )
+  gsap.set('#java',{ x: -3200, opacity: 0, scale:.5, y:-200, rotation: 0, transformOrigin: "50% 50%" } )
   
-    .to("#java", {
-      duration: 7,
-      x: 140,                // Move to natural position
-      rotation: 360*3,       // 2 full rotations
-      ease: "bounce.out",
-    }, 0) // sync rotation with movement
+
+  dollarTL.to("#js", {
+    duration: 2,
+    opacity: 1,          // Fade in if needed
+    ease: "power1.inOut",
+  }, 0) // start at 0 seconds
+
+  .to("#js", {
+    duration: 7,
+    x: contentBox, // 20vw in pixels
+    rotation: 360*3,       // 2 full rotations
+    ease: "power4.inOut",
+  }, 0) // sync rotation with movement
+
+  .to("#js path", {
+    duration: 4,
+    delay:6,
+    morphSVG: "#dollar path",
+    ease: "power1.out",
+  }, 0)
+
+  pythonTL.to("#python-group", {
+    duration: 2,
+    opacity: 1,          // Fade in if needed
+    ease: "power1.inOut",
+  }, 0) // start at 0 seconds
+
+  .to("#python-group", {
+    duration: 7,
+    x: -1850,                // Move to natural position
+    rotation: 360*3,       // 2 full rotations
+    ease: "power4.inOut",
+  }, 0) // sync rotation with movement
+
+  .to("#python-group path", {
+    duration: 4,
+    delay:6,
+    morphSVG: "#dollar-python path",
+    ease: "power1.out",
+  }, 0)
+
+  javaTL.to("#java", {
+    duration: 2,
+    opacity: 1,          // Fade in if needed
+    ease: "power1.inOut",
+  }, 0) // start at 0 seconds
+
+  .to("#java", {
+    duration: 7,
+    x: -1950,                // Move to natural position
+    rotation: 360*3,       // 2 full rotations
+    ease: "bounce.out",
+  }, 0) // sync rotation with movement
+
+  .to("#java path", {
+    duration: 4,
+    delay:6,
+    morphSVG: "#dollar-java path",
+    ease: "power1.out",
+  }, 0)
   
-    .to("#java path", {
-      duration: 4,
-      delay:6,
-      morphSVG: "#dollar-java path",
-      ease: "power1.out",
-    }, 0)
+});
+
+mm.add("(min-width: 640px) and (max-width: 1023px)", () => {
+  // tablet (medium x)
+  
+});
+
+mm.add("(min-width: 1024px)", () => {
+  // desktop (larger x)
+
+  gsap.set("#js", { x: -2000, opacity: 0, scale:.7, y:-60, rotation: 0, transformOrigin: "50% 50%" });
+  gsap.set('#python-group',{ x: -2500, opacity: 0, scale:.7, y:-60, rotation: 0, transformOrigin: "50% 50%" } )
+  gsap.set('#java',{ x: -3000, opacity: 0, scale:.7, y:-60, rotation: 0, transformOrigin: "50% 50%" } )
+  
+  dollarTL.to("#js", {
+    duration: 2,
+    opacity: 1,          // Fade in if needed
+    ease: "power1.inOut",
+  }, 0) // start at 0 seconds
+
+  .to("#js", {
+    duration: 7,
+    x: 140,                // Move to natural position
+    rotation: 360*3,       // 2 full rotations
+    ease: "power4.inOut",
+  }, 0) // sync rotation with movement
+
+  .to("#js path", {
+    duration: 4,
+    delay:6,
+    morphSVG: "#dollar path",
+    ease: "power1.out",
+  }, 0)
+  
+
+
+
+  pythonTL.to("#python-group", {
+    duration: 2,
+    opacity: 1,          // Fade in if needed
+    ease: "power1.inOut",
+  }, 0) // start at 0 seconds
+
+  .to("#python-group", {
+    duration: 7,
+    x: 140,                // Move to natural position
+    rotation: 360*3,       // 2 full rotations
+    ease: "power4.inOut",
+  }, 0) // sync rotation with movement
+
+  .to("#python-group path", {
+    duration: 4,
+    delay:6,
+    morphSVG: "#dollar-python path",
+    ease: "power1.out",
+  }, 0)
+
+  javaTL.to("#java", {
+    duration: 2,
+    opacity: 1,          // Fade in if needed
+    ease: "power1.inOut",
+  }, 0) // start at 0 seconds
+
+  .to("#java", {
+    duration: 7,
+    x: 140,                // Move to natural position
+    rotation: 360*3,       // 2 full rotations
+    ease: "bounce.out",
+  }, 0) // sync rotation with movement
+
+  .to("#java path", {
+    duration: 4,
+    delay:6,
+    morphSVG: "#dollar-java path",
+    ease: "power1.out",
+  }, 0)
+});
 
   })
   return (
@@ -154,7 +246,7 @@ export default function HeroSection() {
         </div>
         <div className="hero-content  w-full h-full justify-center items-center flex flex-col translate-y-30 gap-3 pt-30  relative " >
       
-          <p style={{ }} className="hero-caption text-8xl -mt-56 w-[550px] self-center  font-heading tracking-tighter  font-extrabold text-sand  ">I turn <span className="text-[#2e54d1] gibberish opacity-1">computer gibberish</span> into things that make businesses</p>
+          <p style={{ }} className="hero-caption text-6xl lg:text-8xl -mt-56 w-[300px] lg:w-[550px] self-center  font-heading tracking-tighter  font-extrabold text-sand  ">I turn <span className="text-[#2e54d1] gibberish opacity-1">computer gibberish</span> into things that make businesses</p>
 
           <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 667.17 686.54"  className="absolute bottom-20 left-125 w-[200px] z-50 overflow-visible">
             <defs>

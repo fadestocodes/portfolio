@@ -65,7 +65,7 @@ p {
 @layer components {
 
   .hero-title{
-    @apply  font-bold text-4xl font-heading tracking-tighter
+    @apply  font-bold text-4xl font-heading tracking-tighter w-[200px]
   }
 
   .bingeable-slider{
@@ -96,31 +96,31 @@ p {
   }
   
   .vancouver-canada{
-    @apply font-heading font-bold z-30 text-5xl p-6 uppercase tracking-tighter
+    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-3 md:p-6 uppercase tracking-tighter 
   }
 
   .impactful-container{
-    @apply rotate-3 border-12 -m-20 border-customBlack z-10   justify-self-center self-center  translate-x-20
+    @apply rotate-3 border-12 -m-20 border-customBlack z-10   justify-self-center self-center  translate-x-20  translate-y-[85px] md:translate-y-0
 
   }
 
   .impactful{
-    @apply font-heading font-bold z-30 text-5xl p-6 uppercase tracking-tighter
+    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-2 md:p-6 uppercase tracking-tighter
   }
   .user-facing-container{
-    @apply -rotate-3 border-12  border-customBlack z-10 -m-16  justify-self-center self-center  translate-x-20
+    @apply -rotate-3 border-12  border-customBlack z-10 -m-16  justify-self-center self-center  translate-x-20 translate-y-[85px] md:translate-y-0
 
   }
 
 
 
   .and{
-    @apply font-heading font-bold z-40 text-5xl p-6 text-sand uppercase tracking-tighter mt-6 border-customBlack  drop-shadow-[0_0_10px_black]  justify-self-center self-center  translate-y-20
+    @apply font-heading font-bold z-40 text-5xl p-6  text-sand uppercase tracking-tighter mt-6 border-customBlack  drop-shadow-[0_0_10px_black]  justify-self-center self-center translate-y-20  md:translate-y-20
 
   }
 
   .user-facing{
-    @apply font-heading font-bold z-30 text-5xl p-6 uppercase tracking-tighter
+    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-2 md:p-6 uppercase tracking-tighter
 
   }
   

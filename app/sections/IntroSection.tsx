@@ -191,7 +191,7 @@ const IntroSection = () => {
     <div className="intro-section w-dvw flex flex-col min-h-dvh items-center relative   pb-[500px] " style={{}}>
 
       
-        <div className=" flex flex-col  items-start  w-[1000px] pt-[200px] pb-[500px] justify-start ">
+        <div className=" flex flex-col  items-start w-[350px]  md:w-[1000px] pt-[200px] pb-[500px] justify-start ">
             <h2 className="intro-1  ">👋 Pleased to meet ya, I'm a software developer based in </h2>
               <div 
                 style={{
@@ -203,7 +203,7 @@ const IntroSection = () => {
                       <h2 className="vancouver-canada text-black">Vancouver, Canada</h2>
                    </div>
               </div>
-            <h2 className="intro-2 -mt-2">I enjoy building everything across the full stack, but what I'm most passionate about is creating something</h2>
+            <h2 className="intro-2  md:-mt-2">I enjoy building everything across the full stack, but what I'm most passionate about is creating something</h2>
             {/* <span className="most-passionate">most passionate about</span> */}
             {/* <h2 className="intro-3">is creating something</h2> */}
 
@@ -217,7 +217,7 @@ const IntroSection = () => {
                       <h2 className="impactful text-black">impactful</h2>
                    </div>
               </div>
-              <span className="and opacity-0">&</span>
+              <div className="and opacity-0">&</div>
               <div 
                   style={{
                     clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
